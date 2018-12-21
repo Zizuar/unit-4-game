@@ -5,28 +5,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kitten Deathstar Assault v1.0</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+   
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="assets/javascript/parallax.min.js"></script>
-
+    <script src="./assets/javascript/parallax.min.js"></script>
+    <style>
+            body {
+              background-image: url("assets/images/wrmhl1.png");
+            }
+        </style>
 </head>
 <body>
-    <div id="scene">
-        <div data-depth="0.2">My First Layer!</div>
-        <div data-depth="0.6">My Second Layer!</div>
-    </div>
-        <p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
-        
-        <div class="parallax"></div>
-        
-        <div style="height:1000px;background-color:red;font-size:36px">
-        Scroll Up and Down this page to see the parallax scrolling effect.
-        This div is just here to enable scrolling.
-        Tip: Try to remove the background-attachment property to remove the scrolling effect.
-        </div>
-        
+    <div data-depth="0.1" id="scene" class="parallax" style="height:300px;background-color: lightcoral;font: size 26;px">
+                <br><br>
+                Welcome to the Kitty Death Star Attack Game~
+                In this game you will be presented with 4 different attack craft. Your objective is to plan an attack pattern that matches the power estimate to destroy the death star. For each click of the ship you are adding one of that ship to your attack pattern. The catch? You don't know how much each ship adds to your attack score until you click on it! You must match the death star score number in order to overpower it's defenses and destroy it. Fall under the number and your squadron will be destroied. Go over the number and your squadron will get caught in the blast and destroied. Good luck Commander!<br>
+                <button id="start" type="button" onclick="startNew()" class="btn btn-primary btn-lg btn-block">Start New Game</button>
+                
+    </div>   
+    <br><br><br>  
+        <div data-depth="0.8" class="container parallax; text-primary; h6">
+            <div data-depth="0.2" class="row; mark">
+                    <div id="defense" data-depth="0.4" class="col-sm-12">
+                    <ul>
+                            <li><strong>Wins:</strong></li> <p id = "wins"></p>
+                            <li><strong>Losses:</strong></li> <p id = "losses"></p>
+                    </ul>
+                    </div>
+            </div>
+            <div data-depth="0.4" class="row; mark">
+                <div id="defense" data-depth="0.4" class="col-sm-6">Death Star Defense: </div>
+                <div id="pScore" data-depth="0.4" class="col-sm-6">Squadron Power: 0</div>
+             </div>
+            <div data-depth="0.4" class="row">
+              <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship1" onclick="ship1()" src="assets/images/Lacterus-Jesters_presonal_cruiser.jpg"></div>
+              <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship2" src="assets/images/RedFive_X-wing_SWB.png"></div>
+              <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship3" src="assets/images/xwing2.jpg"></div>
+              <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship4" src="assets/images/Ywing.jpg"></div>
+            </div>
+            <div data-depth="0.4" class="row">
+                <div data-depth="0.4" class="col-sm-12; mark"></div>
+                <div data-depth="0.4" class="row">
+                        <div data-depth="0.4" class="col-sm-10"><img src="assets/images/KittenStar.jpg"></div>
+            </div>
+      </div>
+       
+<script src="./assets/javascript/game.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
         </body>
         </html>
