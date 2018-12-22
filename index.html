@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
    
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script> -->
     <!-- <script src="./assets/javascript/parallax.min.js"></script> -->
     <style>
@@ -27,21 +28,21 @@
                 
     </div>   
     <br><br><br>  
-        <div data-depth="0.8" class="container parallax; text-primary; h6">
+        <div data-depth="0.8" class="container; text-primary; h6">
             <div data-depth="0.2" class="row; mark">
                     <div id="defense" data-depth="0.4" class="col-sm-12">
                     <ul>
-                            <li><strong>Wins:</strong></li> <p id = "wins"></p>
-                            <li><strong>Losses:</strong></li> <p id = "losses"></p>
+                            <li><strong>Wins:</strong> <p id = "wins"></p></li>
+                            <li><strong>Losses:</strong> <p id = "losses"></p></li>
                     </ul>
                     </div>
             </div>
             <div data-depth="0.4" class="row; mark">
-                <div id="defense" data-depth="0.4" class="col-sm-6">Death Star Defense: </div>
-                <div id="pScore" data-depth="0.4" class="col-sm-6">Squadron Power: 0</div>
+                <div data-depth="0.4" class="col-sm-6">Death Star Defense: <p id = "defense"></p></div>
+                <div data-depth="0.4" class="col-sm-6">Squadron Power: <p id = "pScore"></p></div>
              </div>
             <div data-depth="0.4" class="row">
-              <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship1" onclick="ship1()" src="assets/images/Lacterus-Jesters_presonal_cruiser.jpg"></div>
+              <div data-depth="0.4" class="col-sm-3"><button id="ship1" type= "button" src="assets/images/Lacterus-Jesters_presonal_cruiser.jpg"></button></div>
               <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship2" src="assets/images/RedFive_X-wing_SWB.png"></div>
               <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship3" src="assets/images/xwing2.jpg"></div>
               <div data-depth="0.4" class="col-sm-3"><img class="button; img-responsive" id="ship4" src="assets/images/Ywing.jpg"></div>

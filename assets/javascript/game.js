@@ -1,10 +1,9 @@
 console.log('hi i linked')
-var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
-parallaxInstance.friction(0.9, 0.1);
 
 
 
+var wins;
+var loses;
 // * There will be four crystals displayed as buttons on the page.
 // Mine will be rebel ships against the deathstar just to be different.
 var ship1, ship2, ship3, ship4;
@@ -16,12 +15,13 @@ var defense;
 // This should be educational and so I do not intend to show players the value after they click on one of the ships.
 // It will take just some simple math for them to figure out what the value of that ship is, and simple math to know what they need to win.
 // If I have to do math and logic for this darn thing again then there is no reason they can't either. ;-)
-
+var gameStarted;
 var pScore;
 
 var scoreKeeper;
 
 $("#ship1").on("click", function () {
+   console.log("active")
     if (gameStarted === true) {
         scoreKeeper += ship1;
         $("#pScore").text(scoreKeeper);
@@ -33,7 +33,7 @@ $("#ship1").on("click", function () {
 })
 $("#ship2").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship2;
+        scoreKeeper += ship2val;
         $("#pScore").text(scoreKeeper);
         results()
     }
@@ -43,7 +43,7 @@ $("#ship2").on("click", function () {
 })
 $("#ship3").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship3;
+        scoreKeeper += ship3val;
         $("#pScore").text(scoreKeeper);
         results()
     }
@@ -53,7 +53,7 @@ $("#ship3").on("click", function () {
 })
 $("#ship4").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship4;
+        scoreKeeper += ship4val;
         $("#pScore").text(scoreKeeper);
         results()
     }
@@ -74,7 +74,7 @@ function results() {
     if (pScore === defense) {
         $.alert({
             title: 'BOOM BOOM BOOM',
-            content: 'You Destroied The Deathstar! MEOW!<img src="/assets/images/boom.jpg">',
+            content: 'You Destroied The Deathstar! MEOW!<a href="/assets/images/boom.jpg">',
         });
         gameStarted = false;
         return;
@@ -100,18 +100,17 @@ function results() {
 var gameStarted = false;
 
 function startNew() {
-    var gameStarted = true;
+    gameStarted = true;
     random = Math.floor(Math.random() * 102 + 19);
     console.log(random);
     $("#defense").text(random);
-    var ship1 = Math.floor(Math.random() * 12 + 1);
-    var ship2 = Math.floor(Math.random() * 12 + 1);
-    var ship3 = Math.floor(Math.random() * 12 + 1);
-    var ship4 = Math.floor(Math.random() * 12 + 1);
+    ship1 = Math.floor(Math.random() * 12 + 1);
+    var ship2val = Math.floor(Math.random() * 12 + 1);
+    var ship3val = Math.floor(Math.random() * 12 + 1);
+    var ship4val = Math.floor(Math.random() * 12 + 1);
     userTotal = 0;
-    $("#score").text(userTotal);
+    $("#pScore").text(userTotal);
 }
 
 // * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
-var wins;
-var loses;
+
