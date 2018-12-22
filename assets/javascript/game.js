@@ -1,4 +1,4 @@
-console.log('hi i linked')
+console.log('hi i linked');
 
 
 
@@ -21,46 +21,46 @@ var pScore;
 var scoreKeeper;
 
 $("#ship1").on("click", function () {
-   console.log("active")
+   console.log("active");
     if (gameStarted === true) {
         scoreKeeper += ship1;
         $("#pScore").text(scoreKeeper);
-        results()
+        results();
     }
     else {
         return;
     }
-})
+});
 $("#ship2").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship2val;
+        scoreKeeper += ship2;
         $("#pScore").text(scoreKeeper);
-        results()
+        results();
     }
     else {
         return;
     }
-})
+});
 $("#ship3").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship3val;
+        scoreKeeper += ship3;
         $("#pScore").text(scoreKeeper);
-        results()
+        results();
     }
     else {
         return;
     }
-})
+});
 $("#ship4").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship4val;
+        scoreKeeper += ship4;
         $("#pScore").text(scoreKeeper);
-        results()
+        results();
     }
     else {
         return;
     }
-})
+});
 //   * Your game will hide this amount until the player clicks a crystal.
 //   * When they do click one, update the player's score counter.
 
@@ -105,9 +105,9 @@ function startNew() {
     console.log(random);
     $("#defense").text(random);
     ship1 = Math.floor(Math.random() * 12 + 1);
-    var ship2val = Math.floor(Math.random() * 12 + 1);
-    var ship3val = Math.floor(Math.random() * 12 + 1);
-    var ship4val = Math.floor(Math.random() * 12 + 1);
+    ship2 = Math.floor(Math.random() * 12 + 1);
+    ship3 = Math.floor(Math.random() * 12 + 1);
+    ship4 = Math.floor(Math.random() * 12 + 1);
     userTotal = 0;
     $("#pScore").text(userTotal);
 }
