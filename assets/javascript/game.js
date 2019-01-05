@@ -7,7 +7,7 @@ var loses;
 // * There will be four crystals displayed as buttons on the page.
 // Mine will be rebel ships against the deathstar just to be different.
 var ship1, ship2, ship3, ship4;
-
+var ship1val, ship2val, ship3val,ship4val;
 // * The player will be shown a random number at the start of the game.
 // Score card layout will be on various areas of the page rather than a central location as in the past.
 var defense;
@@ -23,7 +23,7 @@ var scoreKeeper;
 $("#ship1").on("click", function () {
    console.log("active");
     if (gameStarted === true) {
-        scoreKeeper += ship1;
+        scoreKeeper += ship1val;
         $("#pScore").text(scoreKeeper);
         results();
     }
@@ -33,7 +33,7 @@ $("#ship1").on("click", function () {
 });
 $("#ship2").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship2;
+        scoreKeeper += ship2val;
         $("#pScore").text(scoreKeeper);
         results();
     }
@@ -43,7 +43,7 @@ $("#ship2").on("click", function () {
 });
 $("#ship3").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship3;
+        scoreKeeper += ship3val;
         $("#pScore").text(scoreKeeper);
         results();
     }
@@ -53,7 +53,7 @@ $("#ship3").on("click", function () {
 });
 $("#ship4").on("click", function () {
     if (gameStarted === true) {
-        scoreKeeper += ship4;
+        scoreKeeper += ship4val;
         $("#pScore").text(scoreKeeper);
         results();
     }
@@ -76,6 +76,7 @@ function results() {
             title: 'BOOM BOOM BOOM',
             content: 'You Destroied The Deathstar! MEOW!<a href="/assets/images/boom.jpg">',
         });
+        console.log(pScore, defense)
         gameStarted = false;
         return;
     }
@@ -101,15 +102,18 @@ var gameStarted = false;
 
 function startNew() {
     gameStarted = true;
+    console.log(gameStarted);
     random = Math.floor(Math.random() * 102 + 19);
     console.log(random);
     $("#defense").text(random);
-    ship1 = Math.floor(Math.random() * 12 + 1);
-    ship2 = Math.floor(Math.random() * 12 + 1);
-    ship3 = Math.floor(Math.random() * 12 + 1);
-    ship4 = Math.floor(Math.random() * 12 + 1);
-    userTotal = 0;
-    $("#pScore").text(userTotal);
+    ship1val = Math.floor(Math.random() * 12 + 1);
+    ship2val = Math.floor(Math.random() * 12 + 1);
+    ship3val = Math.floor(Math.random() * 12 + 1);
+    ship4val = Math.floor(Math.random() * 12 + 1);
+    scoreKeeper = 0;
+    $("#pScore").text(scoreKeeper);
+    console.log(pScore + "" + scoreKeeper);
+
 }
 
 // * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
