@@ -1,7 +1,3 @@
-console.log('hi i linked');
-
-
-
 var wins;
 var loses;
 // * There will be four crystals displayed as buttons on the page.
@@ -21,7 +17,6 @@ var pScore;
 var scoreKeeper;
 
 $("#ship1").on("click", function () {
-   console.log("active");
     if (gameStarted === true) {
         scoreKeeper += ship1val;
         $("#pScore").text(scoreKeeper);
@@ -71,16 +66,16 @@ var addScore;
 // * The player loses if their score goes above the random number.
 
 function results() {
-    if (pScore === defense) {
+    if (scoreKeeper === random) {
         $.alert({
             title: 'BOOM BOOM BOOM',
             content: 'You Destroied The Deathstar! MEOW!<a href="/assets/images/boom.jpg">',
         });
-        console.log(pScore, defense)
+        console.log(scoreKeeper, random)
         gameStarted = false;
         return;
     }
-    elseif(pScore > defense); {
+    else if (scoreKeeper > random) {
         $.alert({
             title: 'SIZZLE THWAP',
             content: 'TOO MUCH! TOO MUCH! Kitty claws scratch! REWAWR!<img src="/assets/images/game over.jpg">',
@@ -88,7 +83,7 @@ function results() {
         gameStarted = false;
         return;
     }
-    elseif(pScore < defense); {
+    else (scoreKeeper < random);{
         return;
     }
 }
@@ -102,19 +97,15 @@ var gameStarted = false;
 
 function startNew() {
     gameStarted = true;
-    console.log(gameStarted);
     random = Math.floor(Math.random() * 102 + 19);
-    console.log(random);
     $("#defense").text(random);
     ship1val = Math.floor(Math.random() * 12 + 1);
     ship2val = Math.floor(Math.random() * 12 + 1);
     ship3val = Math.floor(Math.random() * 12 + 1);
     ship4val = Math.floor(Math.random() * 12 + 1);
-    scoreKeeper = 0;
+    scoreKeeper = "0";
     $("#pScore").text(scoreKeeper);
-    console.log(pScore + "" + scoreKeeper);
-
-}
+    }
 
 // * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
