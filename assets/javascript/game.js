@@ -71,7 +71,7 @@ function results() {
             title: 'BOOM BOOM BOOM',
             content: 'You Destroied The Deathstar! MEOW!<a href="/assets/images/boom.jpg">',
         });
-        console.log(scoreKeeper, random)
+        wins ++ ;
         gameStarted = false;
         return;
     }
@@ -80,6 +80,7 @@ function results() {
             title: 'SIZZLE THWAP',
             content: 'TOO MUCH! TOO MUCH! Kitty claws scratch! REWAWR!<img src="/assets/images/game over.jpg">',
         });
+        loses ++ ;
         gameStarted = false;
         return;
     }

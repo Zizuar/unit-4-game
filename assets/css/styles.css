@@ -8,7 +8,7 @@ body {
 
 img {
   display: block;
-  width: 100%; }
+  width: 50%; }
 
 input[type=checkbox] {
   display: none; }
@@ -57,7 +57,7 @@ button {
   button:hover {
     background: #00ffaa; }
   button#deleteme {
-    margin: 2rem; }
+    margin: 2rem; } */
 
 .scene {
   margin: 0;
